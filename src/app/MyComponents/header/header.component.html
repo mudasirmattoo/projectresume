@@ -1,0 +1,35 @@
+<!-- navbar for large screen -->
+
+<div class="hidden sm:block sticky top-0 bg-black bg-opacity-90">
+    <div class="text-violet-600 font-sans text-xl p-5">
+        <ul class="flex flex-row space-x-32 justify-center">
+            <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/create" routerLinkActive="active" ariaCurrentWhenActive="page">Create</a></li>
+            <li><i class="fa-brands fa-instalod"></i></li>
+            <li><a routerLink="/about">About</a></li>
+            <li><a href="/#footer">Contact</a></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+
+<!-- navbar for small screen -->
+
+<div class="sm:hidden text-violet-600 text-2xl p-2 sticky top-0 bg-black bg-opacity-75">
+    <div class="flex justify-between items-center p-1">
+        <i class="fa-brands fa-instalod text-violet-600 text-xl"></i>
+        <button (click)="toggleMobileDropdown()" class="text-violet-600 focus:outline-none">
+            <i class="fa-solid fa-circle-chevron-down"></i>
+        </button>
+    </div>
+    <div id="mobileDropdown" [class.hidden]="isDropdownHidden" class="  hidden px-3  text-right  ">
+        <ul class="flex flex-col items-center py-5 space-y-22 text-lg ">
+            <li><a routerLink="/home" (click)="closeMobileDropdown()">Home</a></li>
+            <li><a routerLink="/about" (click)="closeMobileDropdown()">About</a></li>
+            <li><a routerLink="/create" routerLinkActive="active" (click)="closeMobileDropdown()">Create</a></li>
+            <li><a href="" (click)="closeMobileDropdown()">Contact</a></li>
+        </ul>
+        
+    </div>
+
+</div>

@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide {
+    0% {
+      top: 0;
+    }
+      25% {
+      top: -2.125rem;
+    }
+      50% {
+      top: -4.25rem;
+    }
+      72.5% {
+      top: -6.375rem;
+    }
+  }
+  
+    /* Animation Keyframes for smaller screens */
+    @keyframes slide-mob {
+      0% {
+        top: 0;
+      }
+      25% {
+        top: -0.5rem;
+      }
+      50% {
+        top: -1.5rem;
+      }
+      72.5% {
+        top: -2.5rem;
+      }
+    }
+  
+    /* Animation for larger screens */
+    @media screen and (min-width: 601px) {
+      .roller #rolltext {
+        animation: slide 3s infinite;
+      }
+    }
+  
+    /* Animation for smaller screens */
+    @media screen and (max-width: 600px) {
+      .roller #rolltext {
+        animation: slide-mob 3s infinite; 
+      }
+    }
+
+
+    .custom{
+      border-radius: 50%;
+      
+      width: 150px;
+      height: 150px;
+
+    }
